@@ -31,24 +31,24 @@ document.getElementById("userGeneratedPassword").innerHTML = userGeneratedPasswo
 
 // Dichiarazione variabili utili
 
-const LENGTH_SIX = 6,  // Costanti
-    LENGTH_TEN = 10;
+const SHORT_LENGTH = 8,  // Costanti
+    LONG_LENGTH = 12;
 
 let hexChars = "0123456789abcdef", // utilities
     shortPassword = "",
     longPassword = "";
 
-// Password da 6 caratteri
+// Password da 8 caratteri
 
-for (let i = 0; i < LENGTH_SIX; i++) {
+for (let i = 0; i < SHORT_LENGTH; i++) {
     let randomIndex = Math.floor(Math.random() * hexChars.length)
     let randomChar = hexChars.charAt(randomIndex)
     shortPassword += randomChar
 }
 
-// Password da 6 caratteri
+// Password da 12 caratteri
 
-for (let i = 0; i < LENGTH_TEN; i++) {
+for (let i = 0; i < LONG_LENGTH; i++) {
     let randomIndex = Math.floor(Math.random() * hexChars.length)
     let randomChar = hexChars.charAt(randomIndex)
     longPassword += randomChar
