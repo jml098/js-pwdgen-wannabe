@@ -22,7 +22,7 @@ let userName = prompt("Inserisci il tuo nome."), // Nome
     userDividedNumber = Math.floor(userDividend / userDivisor), // Risultato divisione arrotondata per difetto
     userGeneratedPassword = `${userName}${userLastName}${userFavoriteColor}${userDividedNumber}`.replace(" ", ""); // Concatenazione password e rimozione spazi bianchi
 
-
+document.getElementById("userGeneratedPassword").innerHTML = userGeneratedPassword;
 
 
 
@@ -41,11 +41,19 @@ let hexChars = "0123456789abcdef", // utilities
 // Password da 6 caratteri
 
 for (let i = 0; i < LENGTH_SIX; i++) {
-    shortPassword += Math.floor(Math.random() * hexChars.length)
+    let randomIndex = Math.floor(Math.random() * hexChars.length)
+    let randomChar = hexChars.charAt(randomIndex)
+    shortPassword += randomChar
 }
 
 // Password da 6 caratteri
 
 for (let i = 0; i < LENGTH_TEN; i++) {
-    longPassword += Math.floor(Math.random() * hexChars.length)
+    let randomIndex = Math.floor(Math.random() * hexChars.length)
+    let randomChar = hexChars.charAt(randomIndex)
+    longPassword += randomChar
 }
+
+
+document.getElementById("shortPassword").innerHTML = shortPassword;
+document.getElementById("longPassword").innerHTML = longPassword;
