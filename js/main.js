@@ -11,6 +11,7 @@
 
 
 
+/* Password Generator con input utente */
 
 // Dichiarazione variabili e assegnazione immediata
 let userName = prompt("Inserisci il tuo nome."), // Nome
@@ -18,6 +19,33 @@ let userName = prompt("Inserisci il tuo nome."), // Nome
     userFavoriteColor = prompt("Inserisci il tuo colore preferito."), // Colore preferito
     userDividend = parseInt(prompt("Inserisci il dividendo.")), // Dividendo
     userDivisor = parseInt(prompt("Inserisci il divisore.")), // Divisore
-    userDividedNumber = userDividend / userDivisor, // Risultato divisione
+    userDividedNumber = Math.floor(userDividend / userDivisor), // Risultato divisione arrotondata per difetto
     userGeneratedPassword = `${userName}${userLastName}${userFavoriteColor}${userDividedNumber}`.replace(" ", ""); // Concatenazione password e rimozione spazi bianchi
 
+
+
+
+
+
+/* Password Randomica */
+
+// Dichiarazione variabili utili
+
+const LENGTH_SIX = 6,  // Costanti
+    LENGTH_TEN = 10;
+
+let hexChars = "0123456789abcdef", // utilities
+    shortPassword = "",
+    longPassword = "";
+
+// Password da 6 caratteri
+
+for (let i = 0; i < LENGTH_SIX; i++) {
+    shortPassword += Math.floor(Math.random() * hexChars.length)
+}
+
+// Password da 6 caratteri
+
+for (let i = 0; i < LENGTH_TEN; i++) {
+    longPassword += Math.floor(Math.random() * hexChars.length)
+}
